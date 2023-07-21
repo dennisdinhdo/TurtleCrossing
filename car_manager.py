@@ -7,7 +7,7 @@ MOVE_INCREMENT = 10
 
 
 class CarManager(Turtle):
-    def __init__(self):
+    def __init__(self, level):
         super().__init__()
         self.shape("square")
         self.shapesize(stretch_wid=1, stretch_len=2)
@@ -15,10 +15,12 @@ class CarManager(Turtle):
         self.setheading(180)
         self.start_right()
         self.move()
+        
 
 # make a def for the car to keep going forward
-    def move(self):
-        self.xcor() += MOVE_INCREMENT
+    def move(self, level):
+        speed = MOVE_INCREMENT * level
+        self.xcor() += speed
 # make a clear definition and to start at the beggining
     def start_right(self):
         self.clear()
